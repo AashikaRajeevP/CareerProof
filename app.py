@@ -17,7 +17,7 @@ app.secret_key = os.getenv("SECRET_KEY")
 if not app.secret_key:
     raise RuntimeError("SECRET_KEY is missing from .env")
 
-UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
+UPLOAD_FOLDER = "/tmp" if os.environ.get("VERCEL") else os.path.join(app.root_path, "uploads")
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
