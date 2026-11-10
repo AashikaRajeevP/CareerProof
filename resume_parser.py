@@ -1,11 +1,9 @@
-
 import pymupdf
 import re
 
 
 def extract_text_from_pdf(pdf_path):
     document = pymupdf.open(pdf_path)
-
     blocks = []
 
     for page in document:
@@ -63,6 +61,7 @@ def parse_resume(text):
     )
 
     for block in blocks:
+
         lines = [
             line.strip()
             for line in block.splitlines()
@@ -102,16 +101,30 @@ def parse_resume(text):
 
         # Skills
         if current_section == "skills":
-        # Join words split by PDF line wrapping
+
+            # Join words split by PDF line wrapping
             skill_text = re.sub(
                 r"(?<=\w)-\s*\n\s*(?=\w)",
                 "",
                 block
             )
 
-            resume_data["skills"].append(
-                " ".join(skill_text.split())
-            )
+            # Separate skills by commas and new lines
+            skill_items = re.split(r"[,\n]", skill_text)
+
+            for item in skill_items:
+
+                item = item.strip()
+
+                if not item:
+                    continue
+
+                # Remove category labels such as Programming:
+                if ":" in item:
+                    item = item.split(":", 1)[1].strip()
+
+                if item:
+                    resume_data["skills"].append(item)
 
         # Projects
         elif current_section == "projects":
@@ -121,6 +134,7 @@ def parse_resume(text):
             numbered = re.match(r"^\d+[\.\)]\s+", first_line)
 
             if numbered:
+
                 project_name = re.sub(
                     r"^\d+[\.\)]\s+", "", first_line
                 )
@@ -133,10 +147,12 @@ def parse_resume(text):
                 resume_data["projects"].append(current_project)
 
             elif first_line.lower().startswith(continuation_words):
+
                 if current_project:
                     current_project["description"] += " " + " ".join(lines)
 
             else:
+
                 current_project = {
                     "name": first_line,
                     "description": " ".join(lines[1:])
@@ -155,6 +171,7 @@ def parse_resume(text):
                     ("expected graduation", "graduation", "cgpa", "gpa")
                 )
             ):
+
                 resume_data["education"][-1] += " " + entry
 
             else:
@@ -169,9 +186,17 @@ def parse_resume(text):
                 resume_data["experience"]
                 and lines[0].lower().startswith(continuation_words)
             ):
+
                 resume_data["experience"][-1] += " " + entry
 
             else:
                 resume_data["experience"].append(entry)
+
+    # Remove duplicate skills while preserving order
+    resume_data["skills"] = list(dict.fromkeys(
+        skill.strip()
+        for skill in resume_data["skills"]
+        if skill.strip()
+    ))
 
     return resume_data
