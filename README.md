@@ -6,6 +6,10 @@ CareerProof is an AI-powered platform that helps users analyze their resumes aga
 
 It identifies matching and missing skills, provides resume improvement suggestions, and generates personalized interview questions based on the user's resume and target job description.
 
+## Live Demo
+
+[Visit CareerProof](https://career-proof-eosin.vercel.app)
+
 ## Features
 
 - **Resume Parsing:** Upload a PDF resume and extract skills, education, projects, and experience.
