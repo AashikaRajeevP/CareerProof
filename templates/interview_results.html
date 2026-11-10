@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerProof - Interview Preparation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #F7F4F0;
+            color: #242344;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: #17183F;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .brand span {
+            color: #DCCBF2;
+        }
+
+        .hero {
+            background: #E7DDF3;
+            padding: 65px 8% 55px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #74628F;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #625E78;
+            max-width: 600px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        main {
+            max-width: 950px;
+            margin: 55px auto;
+            padding: 0 22px;
+        }
+
+        .questions-card {
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 10px 35px rgba(36, 35, 68, 0.06);
+        }
+
+        .section-heading {
+            font-family: 'Sora', sans-serif;
+            font-size: 23px;
+            margin-bottom: 25px;
+        }
+
+        .questions-content {
+            color: #45445C;
+            font-size: 16px;
+            overflow-wrap: anywhere;
+        }
+
+        .questions-content h1,
+        .questions-content h2,
+        .questions-content h3,
+        .questions-content h4 {
+            font-family: 'Sora', sans-serif;
+            color: #242344;
+            margin: 25px 0 12px;
+            text-align: left;
+        }
+
+        .questions-content h1 {
+            font-size: 26px;
+        }
+
+        .questions-content h2 {
+            font-size: 22px;
+            border-bottom: 2px solid #E7DDF3;
+            padding-bottom: 10px;
+        }
+
+        .questions-content h3 {
+            font-size: 19px;
+        }
+
+        .questions-content p {
+            margin-bottom: 15px;
+        }
+
+        .questions-content ul,
+        .questions-content ol {
+            padding-left: 25px;
+            margin: 12px 0 22px;
+        }
+
+        .questions-content li {
+            padding-left: 5px;
+            margin-bottom: 12px;
+        }
+
+        .questions-content strong {
+            color: #242344;
+        }
+
+        .questions-content hr {
+            border: none;
+            border-top: 1px solid #E9E5EF;
+            margin: 25px 0;
+        }
+
+        .questions-content blockquote {
+            background: #F5F0FA;
+            border-left: 4px solid #A994CF;
+            padding: 15px 20px;
+            margin: 18px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .error-message {
+            background: #FFF8F1;
+            border: 1px solid #F0D9C4;
+            border-radius: 14px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .error-message h2 {
+            font-family: 'Sora', sans-serif;
+            color: #8B542F;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .error-message p {
+            color: #625E78;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .bottom-section {
+            text-align: center;
+            margin: 45px 0 65px;
+        }
+
+        .bottom-section p {
+            color: #77738B;
+            margin-bottom: 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: #242344;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #514B78;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #17183F;
+            color: #C9C6DA;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 18px 6%;
+            }
+
+            .brand {
+                font-size: 21px;
+            }
+
+            .hero {
+                padding: 50px 6%;
+            }
+
+            .questions-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="brand">CAREER<span>PROOF</span></div>
+    </nav>
+
+    <section class="hero">
+        <div class="eyebrow">YOUR NEXT STEP</div>
+        <h1>Walk into your interview<br>with confidence.</h1>
+
+        <p>
+            {% if error_message %}
+                Your interview preparation is temporarily interrupted.
+                Don't worry, your resume analysis is still available.
+            {% else %}
+                Your personalised interview questions are ready.
+                Practice them and prepare to demonstrate what you know.
+            {% endif %}
+        </p>
+    </section>
+
+    <main>
+        <div class="questions-card">
+
+            {% if error_message %}
+
+                <div class="error-message">
+                    <h2>Interview Questions Temporarily Unavailable</h2>
+
+                    <p>{{ error_message }}</p>
+
+                    <a href="/" class="home-btn">Back to Home</a>
+                </div>
+
+            {% else %}
+
+                <h2 class="section-heading">Your Interview Questions</h2>
+
+                <div class="questions-content">
+                    {{ questions | safe }}
+                </div>
+
+            {% endif %}
+
+        </div>
+
+        <div class="bottom-section">
+            <p>Every question is an opportunity to prove your potential.</p>
+            <a href="/" class="home-btn">Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 CAREERPROOF. Don't just claim it. Prove it.
+    </footer>
+
+</body>
+</html>

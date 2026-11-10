@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CAREERPROOF | AI Career Analysis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #F7F4F0;
+            color: #292633;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #17183F;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #D9C5F2;
+        }
+
+        .nav-label {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: #DAD9EC;
+            font-weight: 600;
+        }
+
+        /* HEADER */
+
+        .hero {
+            background: #E7DDF3;
+            padding: 55px 8%;
+        }
+
+        .eyebrow {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #80679F;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #625D6B;
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        /* MAIN CONTENT */
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 45px 25px 75px;
+        }
+
+        .report-heading {
+            margin-bottom: 25px;
+        }
+
+        .report-heading h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 23px;
+            margin-bottom: 7px;
+        }
+
+        .report-heading p {
+            font-size: 13px;
+            color: #85808C;
+        }
+
+        /* AI REPORT CARD */
+
+        .analysis-card {
+            background: #FFFFFF;
+            border: 1px solid #EAE5E0;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 12px 35px rgba(40, 35, 65, 0.04);
+        }
+
+        .report-label {
+            display: inline-block;
+            background: #E7DDF3;
+            color: #665080;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        /* FORMATTED AI CONTENT */
+
+        .analysis-content {
+            color: #4E4A57;
+            font-size: 15px;
+            line-height: 1.85;
+            overflow-wrap: anywhere;
+        }
+
+        .analysis-content h1,
+        .analysis-content h2 {
+            font-family: 'Sora', sans-serif;
+            color: #292633;
+            font-size: 23px;
+            margin: 35px 0 15px;
+            letter-spacing: -0.7px;
+        }
+
+        .analysis-content h3,
+        .analysis-content h4 {
+            font-family: 'Sora', sans-serif;
+            color: #665080;
+            font-size: 18px;
+            margin: 25px 0 12px;
+        }
+
+        .analysis-content p {
+            margin-bottom: 15px;
+        }
+
+        .analysis-content ul,
+        .analysis-content ol {
+            padding-left: 25px;
+            margin: 15px 0 22px;
+        }
+
+        .analysis-content li {
+            padding-left: 5px;
+            margin-bottom: 10px;
+        }
+
+        .analysis-content strong {
+            color: #292633;
+            font-weight: 700;
+        }
+
+        .analysis-content hr {
+            border: none;
+            border-top: 1px solid #EEE8F1;
+            margin: 28px 0;
+        }
+
+        .analysis-content blockquote {
+            background: #F1EAF7;
+            border-left: 4px solid #A28CCB;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .analysis-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+
+        .analysis-content th,
+        .analysis-content td {
+            border: 1px solid #EAE5E0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .analysis-content th {
+            background: #E7DDF3;
+            color: #453957;
+        }
+
+        /* INTERVIEW CTA */
+
+        .interview-section {
+            background: #DDEBE8;
+            border-radius: 20px;
+            padding: 38px;
+            margin-top: 35px;
+        }
+
+        .interview-section .eyebrow {
+            color: #52766B;
+        }
+
+        .interview-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 25px;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .interview-section p {
+            color: #52645D;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 22px;
+        }
+
+        .interview-button {
+            display: inline-block;
+            background: #292747;
+            color: white;
+            text-decoration: none;
+            border: none;
+            padding: 16px 27px;
+            border-radius: 35px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .interview-button:hover {
+            background: #77629C;
+            transform: translateY(-3px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #77629C;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #17183F;
+            color: #DAD9EC;
+            text-align: center;
+            padding: 28px;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+            .hero {
+                padding: 40px 6%;
+            }
+
+            .container {
+                padding: 30px 6% 55px;
+            }
+
+            .analysis-card {
+                padding: 24px 18px;
+            }
+
+            .interview-section {
+                padding: 28px 22px;
+            }
+
+            .nav-label {
+                font-size: 9px;
+            }
+
+            .analysis-content table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">CAREERPROOF<span>®</span></div>
+        <div class="nav-label">AI INTELLIGENCE / 02</div>
+    </nav>
+
+    <!-- HEADER -->
+
+    <section class="hero">
+
+        <div class="eyebrow">BEYOND THE RESUME.</div>
+
+        <h1>Your career, analysed.</h1>
+
+        <p>
+            Your resume meets the job description.
+            Explore your strengths, identify skill gaps
+            and discover where you can improve.
+        </p>
+
+    </section>
+
+    <!-- ANALYSIS REPORT -->
+
+    <main class="container">
+
+        <div class="report-heading">
+
+            <h2>Your AI analysis report.</h2>
+
+            <p>
+                A breakdown of your profile against the job requirements.
+            </p>
+
+        </div>
+
+        <section class="analysis-card">
+
+            <div class="report-label">
+                ✦ AI-POWERED CAREER INSIGHTS
+            </div>
+
+            <div class="analysis-content">
+                {{ ai_result | safe }}
+            </div>
+
+        </section>
+
+        <!-- INTERVIEW PREPARATION -->
+
+        <section class="interview-section">
+
+            <div class="eyebrow">YOUR NEXT MOVE</div>
+
+            <h2>Ready to prove what you know?</h2>
+
+            <p>
+                Turn your resume and job description into a
+                personalised interview preparation session.
+                Get questions based on your skills, projects
+                and the role you're targeting.
+            </p>
+
+            <form action="/interview" method="POST">
+
+                <button type="submit" class="interview-button">
+                    PREPARE FOR INTERVIEW ↗
+                </button>
+
+            </form>
+
+        </section>
+
+        <a href="/" class="back-link">
+            ← Back to homepage
+        </a>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        CAREERPROOF® — DON'T JUST CLAIM IT. PROVE IT.
+    </footer>
+
+</body>
+</html>
